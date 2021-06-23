@@ -573,6 +573,9 @@ section:not(.project) {
   color: #777;
   font-size: 2rem;
 }
+.vertical-project .title.pub {
+  margin-top: 16rem;
+}
 .vertical-project .divider {
   background: #fff;
   width: 1px;
@@ -643,6 +646,9 @@ section:not(.project) {
 }
 .vertical-project .item .img-container img {
   width: 80%;
+}
+.vertical-project .item .img-container .second-image {
+  margin-top: 8rem;
 }
 .vertical-project .item .img-container p {
   position: absolute;

@@ -510,6 +510,9 @@
     color: #777;
     font-size: 2rem;
   }
+  .title.pub {
+    margin-top: 16rem;
+  }
   .divider {
     background: #fff;
     width: 1px;
@@ -584,6 +587,9 @@
       }
       img {
         width: 80%;
+      }
+      .second-image {
+        margin-top: 8rem;
       }
       p {
         position: absolute;

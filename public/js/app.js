@@ -372,9 +372,11 @@ function loading() {
 
   imgLoaded.on('progress', function () {
     imgLoadedCnt += 1
+    dd('progress: ', imgLoaddCnt)
   })
 
   function updateProgress() {
+    dd(imgLoadedCnt)
     const percent = (imgLoadedCnt / imgTotal) * 100
     imgCurrent += (percent - imgCurrent) * 0.1
 
