@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #fff;
+  font-family: roxborough;
+  overflow-x: hidden;
+}
+
+section {
+  background: #121313;
+}
+
+section:not(.project) {
+  position: relative;
+  z-index: 50;
+}
