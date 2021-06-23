@@ -372,7 +372,7 @@ function loading() {
 
   imgLoaded.on('progress', function () {
     imgLoadedCnt += 1
-    dd('progress: ', imgLoaddCnt)
+    dd('progress: ', imgLoadedCnt)
   })
 
   function updateProgress() {
