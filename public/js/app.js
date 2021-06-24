@@ -106,19 +106,6 @@ String.prototype.toKorChars = function () {
 }
 
 const dd = console.log
-const menuEl = document.querySelector('.menu')
-const contextMenuEl = document.querySelector('.menu .context-menu')
-const soundEl = document.querySelector('.sound-item')
-
-const visual = document.querySelector('.visual')
-const stEl = document.querySelector('.scroll-top')
-const typingEl = document.querySelector('.typing')
-const circleEl = document.querySelector('.progress__circle')
-const fadeDownEl = document.querySelectorAll('.fade-down')
-const fadeIn = document.querySelectorAll('.fade-in')
-const rightTextEl = document.querySelectorAll('.ani-right-txt')
-const sectionsEl = document.querySelectorAll('section')
-const contextMenuLinksEl = document.querySelectorAll('.menu .context-menu > a')
 
 // 원이 둘레 공식 (반지름 * 2 * 파이)
 const CIRCUMFERENCE = 29 * 2 * Math.PI
@@ -128,7 +115,7 @@ const typiText = [
   '리액트 프로젝트 표지입니다.'.split(''),
   '제가 지금까지 리액트로 만들어온 사이트를 소개하는 페이지입니다.'.split(''),
   '퍼블리싱 반응형 및 jQuery & php 표지입니다.'.split(''),
-  '퍼블리싱 반응형 및 jquery & php 로 만들어온 사이트들입니다.'.split(''),
+  '퍼블리싱 반응형 과 jquery & php 로 만들어온 사이트들입니다.'.split(''),
   'contact 페이지 표지입니다.'.split(''),
   'contact 페이지입니다 포토폴리오가 마음에 드셨다면 연락바랍니다.'.split(''),
 ]
@@ -169,15 +156,17 @@ function indicator() {
   const percent = window.scrollY / documentHeight
   // const dashOffset = (documentHeight - window.scrollY) / documentHeight
 
-  circleEl.style.strokeDasharray = CIRCUMFERENCE
-  circleEl.style.strokeDashoffset = CIRCUMFERENCE * (1 - percent) + 'px'
+  $('.progress__circle').css({
+    strokeDasharray: CIRCUMFERENCE,
+    strokeDashoffset: CIRCUMFERENCE * (1 - percent) + 'px',
+  })
 }
 
 // 타이핑 애니메이션 실행 함수
 function typing(name, idx) {
   if (i >= typiArr[idx].length - 1) clearInterval(timer[name])
 
-  typingEl.innerHTML = text + typiArr[idx][i][j]
+  $('.typing').html(text + typiArr[idx][i][j])
 
   j++
 
@@ -216,13 +205,13 @@ function checkBottomScroll($element) {
 function contextShow(e) {
   if (!e.target.parentElement.classList.contains('context-menu')) {
     e.stopPropagation()
-    $('.context-menu').show()
+    $('.context-menu').css({ height: '350px' })
   }
 }
 
 // 상황에 맞는 메뉴 숨기기
 function contextHide() {
-  $('.context-menu').hide()
+  $('.context-menu').css({ height: 0 })
 }
 
 // 페럴렉스 스크롤 닿았을때 보여주기
@@ -316,24 +305,19 @@ $(window).on('scroll', () => {
   }
 
   $('.cover').each((idx, el) => {
+    $(el).height(
+      window.innerWidth +
+        $(el).find('.ani-right-txt').width() +
+        $(window).height()
+    )
     if (checkTopScroll($(el))) {
       $(el)
         .find('.ani-right-txt')
         .css({
-          transform: `translate3d(${
-            $(el).width() - (st + wh - $(el).offset().top)
-          }px, 0, 0)`,
+          left: window.innerWidth - (st - $(el).offset().top),
         })
     }
   })
-
-  if (checkTopScroll($('.project-cover')))
-    $('.project-cover .ani-right-txt').css({
-      transform: `translate3d(${
-        $('.project-cover').width() -
-        (st + wh - $('.project-cover').offset().top)
-      }px, 0, 0)`,
-    })
 
   // 프로필 이미지 아래로 스크롤 따라 옮기기
   if (
@@ -372,13 +356,12 @@ function loading() {
 
   imgLoaded.on('progress', function () {
     imgLoadedCnt += 1
-    dd('progress: ', imgLoadedCnt)
   })
 
   function updateProgress() {
-    dd(imgLoadedCnt)
     const percent = (imgLoadedCnt / imgTotal) * 100
     imgCurrent += (percent - imgCurrent) * 0.1
+    dd(imgCurrent)
 
     $('.loading .cnt').text(Math.floor(imgCurrent) + '%')
 

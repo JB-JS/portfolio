@@ -214,15 +214,18 @@ section:not(.project) {
   position: absolute;
   right: 10px;
   top: 68px;
-  display: none;
+  height: 0;
+  overflow: hidden;
   font-family: S-CoreDream-3Light;
-  background: #212121;
+  transition: 0.5s;
   color: #fff;
   z-index: 200;
 }
 .menu .context-menu a {
+  background: #212121;
   display: block;
   white-space: nowrap;
+  height: 50px;
   font-size: 1.25rem;
   padding: 0.5rem 2.25rem 1rem 1rem;
 }
@@ -322,7 +325,7 @@ section:not(.project) {
 }
 
 .main {
-  height: 1800px;
+  height: calc(100vh + 100vw - 480px);
 }
 .main .sticky {
   height: 100vh;
@@ -335,7 +338,7 @@ section:not(.project) {
   left: 50%;
   min-width: 480px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   transform: translateX(-50%);
   background: url("../images/visual.jpeg") no-repeat center/cover;
   font-size: 8rem;
@@ -451,13 +454,9 @@ section:not(.project) {
   font-size: 2.125rem;
 }
 
-.cover {
-  height: 1600px;
-}
 .cover .bg {
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
 }
@@ -469,6 +468,9 @@ section:not(.project) {
   background: rgba(12, 13, 13, 0.4);
 }
 .cover .bg .title {
+  position: absolute;
+  top: 50%;
+  left: 100%;
   font-size: 8vw;
   word-spacing: 2rem;
   white-space: nowrap;

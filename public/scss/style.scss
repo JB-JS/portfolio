@@ -159,15 +159,18 @@
     position: absolute;
     right: 10px;
     top: 68px;
-    display: none;
+    height: 0;
+    overflow: hidden;
     font-family: S-CoreDream-3Light;
-    background: rgb(33, 33, 33);
+    transition: 0.5s;
     color: #fff;
     z-index: 200;
 
     a {
+      background: rgb(33, 33, 33);
       display: block;
       white-space: nowrap;
+      height: 50px;
       font-size: 1.25rem;
       padding: 0.5rem 2.25rem 1rem 1rem;
     }
@@ -263,7 +266,7 @@
 }
 
 .main {
-  height: 1800px;
+  height: calc(100vh + 100vw - 480px);
   .sticky {
     height: 100vh;
     .visual {
@@ -272,7 +275,7 @@
       left: 50%;
       min-width: 480px;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       transform: translateX(-50%);
       background: url('../images/visual.jpeg') no-repeat center / cover;
       font-size: 8rem;
@@ -388,15 +391,16 @@
 
 // cover 섹션
 .cover {
-  height: 1600px;
   .bg {
     position: relative;
-    display: flex;
-    align-items: center;
+    width: 100%;
     @include darken;
     height: 100vh;
     overflow: hidden;
     .title {
+      position: absolute;
+      top: 50%;
+      left: 100%;
       font-size: 8vw;
       word-spacing: 2rem;
       white-space: nowrap;
