@@ -286,7 +286,7 @@ $(window).on('scroll', () => {
   const wh = $(window).height()
   const st = parseInt($(window).scrollTop(), 10)
 
-  if (st <= 1100) {
+  if (st <= $('.main').height()) {
     $('.visual').width($(window).width() - st)
   } else {
     $('.visual').width(480)

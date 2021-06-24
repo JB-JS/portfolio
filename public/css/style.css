@@ -474,6 +474,8 @@ section:not(.project) {
   font-size: 8vw;
   word-spacing: 2rem;
   white-space: nowrap;
+  font-weight: normal;
+  transform: translateY(-50%);
 }
 .cover .project-bg {
   background: url("../images/project.jpeg") no-repeat center/cover;
@@ -586,9 +588,6 @@ section:not(.project) {
 }
 .vertical-project .txt-box {
   margin: 4rem auto;
-}
-.vertical-project .txt-box .description {
-  font-size: 1.5rem;
 }
 .vertical-project .item .btns {
   display: flex;
