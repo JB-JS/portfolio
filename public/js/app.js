@@ -337,7 +337,27 @@ $(window).on('scroll', () => {
 })
 
 $('.menu').on('click', (e) => contextShow(e))
-$('.sound-item').on('click', () => audio.play())
+$('.sound-item').on('click', (e) => {
+  if (audio.paused) {
+    audio.play()
+  } else {
+    audio.pause()
+  }
+
+  soundIcon()
+})
+
+soundIcon()
+
+function soundIcon() {
+  if (audio.paused) {
+    $('.unmute').hide()
+    $('.mute').show()
+  } else {
+    $('.unmute').show()
+    $('.mute').hide()
+  }
+}
 
 // 텍스트 쪼개기
 $('.visual h1 > span').each((idx, el) => {
