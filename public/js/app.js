@@ -366,18 +366,11 @@ function loading() {
   const imgLoaded = imagesLoaded('body')
   const imgTotal = imgLoaded.images.length
   let imgLoadedCnt = 0
-  let progressTimerId = setInterval(updateProgress, 1000 / 60)
 
   imgLoaded.on('progress', function () {
     imgLoadedCnt += 1
-    dd('imgLoadedCnt')
-  })
-
-  function updateProgress() {
-    dd('browser Call Stack', imgLoadedCnt)
 
     if (imgTotal / imgLoadedCnt === 1) {
-      clearInterval(progressTimerId)
       $('.wrapper').delay(1000).animate({ top: '-100%' }, 500)
       $('body').css({ overflowY: 'scroll' })
       indicator()
@@ -411,7 +404,11 @@ function loading() {
           0.09
         )
     }
-  }
+  })
+
+  imgLoaded.on('success', function () {
+    dd('success', imgLoadedCnt)
+  })
 }
 
 $('body').css({ overflowY: 'hidden' })
