@@ -94,7 +94,7 @@ section:not(.project) {
 
 .txt-box {
   width: 25%;
-  font-family: S-CoreDream-2ExtraLigh;
+  font-family: S-CoreDream-3Light;
   font-weight: lighter;
   text-align: justify;
 }
@@ -147,19 +147,102 @@ section:not(.project) {
   font-weight: bold;
 }
 
-.loading {
+.wrapper {
   position: fixed;
-  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background: #202020;
+  z-index: 5000;
+}
+.wrapper .loader-outer {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  border-bottom: 1px solid #303030;
+  background: #151515;
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 1;
+}
+.wrapper .loader-outer .loader-inner {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: -100px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  width: auto;
   height: 100%;
-  background: #fa7;
-  font-size: 6vw;
-  font-family: S-CoreDream-3Light;
+  text-align: center;
+  font-size: 60px;
+  z-index: 2;
+  animation: load 2s infinite linear;
+}
+.wrapper .loader-outer .loader-inner .radius-square {
+  width: 15px;
+  border-radius: 5px;
+  height: 50%;
+  background: crimson;
+  box-shadow: 0 0 20px crimson;
+}
+.wrapper .loader-outer .loader-inner .radius-square + div {
+  margin-left: 5px;
+}
+.wrapper h1 {
+  position: absolute;
+  margin: auto;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 85px;
+  height: 40px;
+  text-transform: uppercase;
+  text-align: left;
+  text-shadow: 0 0 20px crimson;
+  letter-spacing: 0.1em;
+  font-size: 1vw;
+  font-weight: lighter;
+  font-family: "S-CoreDream-3Light";
+  color: crimson;
+}
+.wrapper h1 span {
+  display: none;
+}
+.wrapper h1::after {
+  animation: txt 1s infinite;
+  content: "";
 }
 
+@keyframes load {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 220px;
+  }
+}
+@keyframes txt {
+  0% {
+    content: "LOADING";
+  }
+  35% {
+    content: "LOADING.";
+  }
+  65% {
+    content: "LOADING..";
+  }
+  100% {
+    content: "LOADING...";
+  }
+}
 .primary-btn {
   width: 120px;
   height: 50px;
@@ -252,7 +335,7 @@ section:not(.project) {
 .introduce .typing {
   position: relative;
   margin: 0 1rem;
-  font-family: "S-CoreDream-2ExtraLight";
+  font-family: "S-CoreDream-3Light";
 }
 .introduce .typing::after {
   content: "";
@@ -626,17 +709,7 @@ section:not(.project) {
   justify-content: center;
   font-size: 1.5rem;
   margin-top: 4rem;
-}
-.vertical-project .item .site-view > a svg {
-  transform: rotate(180deg);
-}
-.vertical-project .item .site-view > a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  width: 100%;
-  height: 1px;
-  background: #fff;
+  text-decoration: underline;
 }
 .vertical-project .item .img-container {
   position: relative;
@@ -644,13 +717,11 @@ section:not(.project) {
   margin: 0 auto;
 }
 .vertical-project .item .img-container h2 {
+  font-weight: lighter;
   font-size: 6rem;
 }
 .vertical-project .item .img-container img {
-  width: 80%;
-}
-.vertical-project .item .img-container .second-image {
-  margin-top: 8rem;
+  width: 70%;
 }
 .vertical-project .item .img-container p {
   position: absolute;

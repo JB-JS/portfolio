@@ -201,19 +201,6 @@ function checkBottomScroll($element) {
     : false
 }
 
-// 상황에 맞는 메뉴 보여쥬기
-function contextShow(e) {
-  if (!e.target.parentElement.classList.contains('context-menu')) {
-    e.stopPropagation()
-    $('.context-menu').css({ height: '350px' })
-  }
-}
-
-// 상황에 맞는 메뉴 숨기기
-function contextHide() {
-  $('.context-menu').css({ height: 0 })
-}
-
 // 페럴렉스 스크롤 닿았을때 보여주기
 function fadeAni() {
   const st = $(window).scrollTop()
@@ -281,7 +268,9 @@ function typiAni() {
   })
 }
 
-$(window).on('click', contextHide)
+$(window).on('click', () => {
+  $('.context-menu').css({ height: 0 })
+})
 $(window).on('scroll', () => {
   const wh = $(window).height()
   const st = parseInt($(window).scrollTop(), 10)
@@ -336,7 +325,13 @@ $(window).on('scroll', () => {
   $('.scroll-top').text(st)
 })
 
-$('.menu').on('click', (e) => contextShow(e))
+$('.menu').on('click', function (e) {
+  if (!e.target.parentElement.classList.contains('context-menu')) {
+    e.stopPropagation()
+    $('.context-menu').css({ height: '350px' })
+  }
+})
+
 $('.sound-item').on('click', (e) => {
   if (audio.paused) {
     audio.play()
@@ -371,23 +366,19 @@ function loading() {
   const imgLoaded = imagesLoaded('body')
   const imgTotal = imgLoaded.images.length
   let imgLoadedCnt = 0
-  let imgCurrent = 0
-  let orogressTimerId = setInterval(updateProgress, 1000 / 60)
+  let progressTimerId = setInterval(updateProgress, 1000 / 60)
 
   imgLoaded.on('progress', function () {
     imgLoadedCnt += 1
+    dd('imgLoadedCnt')
   })
 
   function updateProgress() {
-    const percent = (imgLoadedCnt / imgTotal) * 100
-    imgCurrent += (percent - imgCurrent) * 0.1
-    dd(imgCurrent)
+    dd('browser Call Stack')
 
-    $('.loading .cnt').text(Math.floor(imgCurrent) + '%')
-
-    if (imgCurrent >= 100) {
-      clearInterval(orogressTimerId)
-      $('.loading').delay(1000).animate({ top: '-100%' }, 500)
+    if (imgTotal / imgLoadedCnt === 1) {
+      clearInterval(progressTimerId)
+      $('.wrapper').delay(1000).animate({ top: '-100%' }, 500)
       $('body').css({ overflowY: 'scroll' })
       indicator()
       fadeAni()
@@ -419,10 +410,6 @@ function loading() {
           { ease: Back.easeOut.config(1.7), opacity: 1 },
           0.09
         )
-    }
-
-    if (imgCurrent > 99) {
-      imgCurrent = 100
     }
   }
 }
