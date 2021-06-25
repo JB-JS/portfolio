@@ -374,7 +374,7 @@ function loading() {
   })
 
   function updateProgress() {
-    dd('browser Call Stack')
+    dd('browser Call Stack', imgLoadedCnt)
 
     if (imgTotal / imgLoadedCnt === 1) {
       clearInterval(progressTimerId)
