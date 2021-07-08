@@ -62,7 +62,7 @@
       <!-- 프로필 상자 -->
       <div class="introduce">
         <img
-          src="./public/images/profile.png"
+          src="./public/images/profile.jpeg"
           alt="jungbeomsu profile Image"
           class="profile"
         />
@@ -163,7 +163,7 @@
           <div class="my-profile fade-down" data-duration="1000">
             <div class="img-box">
               <img
-                src="./public/images/profile.png"
+                src="./public/images/profile.jpeg"
                 alt="my Profile"
                 width="400"
                 height="400"
@@ -198,6 +198,90 @@
       <section class="project" data-section="project" id="project-page">
         <ul class="project-list">
           <li class="p1">
+            <div class="img-container">
+              <img src="./public/images/JMusic.png" alt="JMusic" />
+            </div>
+            <div class="content">
+              <div class="r-txt title">JMusic Site</div>
+              <div class="tags">
+                <a href="https://ko.reactjs.org/" class="react" target="_blank">
+                  <img src="./public/images/react.png" alt="react logo" />
+                  &nbsp;&nbsp;React
+                </a>
+                <a href="https://axios-http.com/" class="axios" target="_blank">
+                  <img src="./public/images/axios.png" alt="axios logo" />
+                  &nbsp;&nbsp;Axios
+                </a>
+                <a
+                  href="https://styled-components.com/"
+                  class="styled-components"
+                  target="_blank"
+                >
+                  <img
+                    src="./public/images/styled-components.png"
+                    alt="styled-components Logo"
+                  />
+                  &nbsp;&nbsp;styled-components
+                </a>
+                <a
+                  href="https://reactrouter.com/web/guides/quick-start"
+                  class="react-router-dom"
+                  target="_blank"
+                >
+                  <img
+                    src="./public/images/react-router-dom.png"
+                    alt="react-router-dom Logo"
+                  />
+                  &nbsp;&nbsp;react-router-dom
+                </a>
+              </div>
+              <p class="description">
+                JMusic 사이트는
+                <a
+                  href="https://developers.google.com/youtube/v3?hl=ko"
+                  target="_blank"
+                  >Youtube Data Api V3</a
+                >
+                로부터 비디오와 재생목록을 Axios로 가져와서 사용자가 편하게
+                볼수있게 UI Component를 리엑트를 이용해서 제작하였습니다.
+                컴포넌트 스타일링은 styled-components를 사용해서 css-in-js
+                방식으로 스타일링 하였습니다. react-router-dom을 이용해서 Home,
+                Search, Playlists 페이지가 있습니다. 음악을 재생목록에
+                추가하거나 혹은 음악을 검색하거나 음악을 재생할 수 있는 뮤직
+                웹앱 SPA사이트를 제작하였습니다. 호스팅은 Netlify 에 하였습니다.
+              </p>
+              <a
+                href="https://github.com/JB-JS/JMusic"
+                class="github__link"
+                target="_blank"
+              >
+                <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Github 코드 보기
+                </button>
+              </a>
+              <a
+                href="https://jbmusic.netlify.app/"
+                class="nettlify-link"
+                target="_blank"
+              >
+                <button>
+                  <img src="./public/images/nettlify.png" alt="nettlify Logo" />
+                  Netlify 사이트 보기
+                </button>
+              </a>
+            </div>
+          </li>
+          <li class="p2">
             <div class="img-container">
               <img src="./public/images/Nomflix.png" alt="Nomflix" />
             </div>
@@ -272,6 +356,7 @@
               <a
                 href="https://adoring-lovelace-42f3ab.netlify.app"
                 class="nettlify-link"
+                target="_blank"
               >
                 <button>
                   <img src="./public/images/nettlify.png" alt="nettlify Logo" />
@@ -280,47 +365,8 @@
               </a>
             </div>
           </li>
-          <li class="p2">
-            <div class="img-container">
-              <img src="./public/images/Nomflix.png" alt="Nomflix" />
-            </div>
-            <div class="content">
-              <div class="l-txt title">Webstandart site</div>
-              <p class="description">
-                Nomflix 사이트는
-                <a href="https://developers.themoviedb.org/3/tv/get-tv-details"
-                  >The Movie Database Api</a
-                >
-                로부터 영화 정보를 Axios 로 가져와서 사용자가 편하게 볼수있게
-                Ui를 리엑트를 이용해서 제작하였습니다 영화를 검색할 수 있거나
-                클릭해서 영화의 정보를 보여줄 수 있습니다. 호스팅은 nettlify 에
-                하였습니다
-              </p>
-              <a href="" class="github__link" target="_blank">
-                <button>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                  Github 코드 보기
-                </button>
-              </a>
-              <a href="" class="nettlify-link">
-                <button>
-                  <img src="./public/images/nettlify.png" alt="nettlify Logo" />
-                  Netlify 사이트 보기
-                </button>
-              </a>
-            </div>
-          </li>
           <li class="p3">
-            <div class="img-container">
+            <!--            <div class="img-container">
               <img src="./public/images/Nomflix.png" alt="Nomflix" />
             </div>
             <div class="content">
@@ -356,7 +402,7 @@
                   Netlify 사이트 보기
                 </button>
               </a>
-            </div>
+            </div> -->
           </li>
         </ul>
       </section>
@@ -369,7 +415,7 @@
         <div class="sticky">
           <div class="vertical-project-bg bg">
             <h1 class="title ani-right-txt">
-              PUBLISHING SITE & RESPONSIVE SITE & JQUERY SITE & PHP SITE
+              PUBLISHING SITE & RESPONSIVE SITE & JQUERY SITE
             </h1>
           </div>
         </div>
