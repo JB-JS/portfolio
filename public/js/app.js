@@ -310,10 +310,12 @@ $(window).on('scroll', () => {
 
   // 프로필 이미지 아래로 스크롤 따라 옮기기
   if (
-    st + wh >= $('.my-profile').offset().top &&
-    st <= $('.my-profile img').offset().top + $('.my-profile').height()
+    st + wh >= $('.my-profile .img-box').offset().top &&
+    st <=
+      $('.my-profile .img-box').offset().top +
+        $('.my-profile .img-box').height()
   ) {
-    $('.my-profile img').css({
+    $('.my-profile .img-box').css({
       transform: `translate3d(0, ${
         (st + wh - $('.my-profile').offset().top) / 4
       }px, 0)`,
