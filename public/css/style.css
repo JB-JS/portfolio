@@ -94,6 +94,7 @@ section:not(.project) {
   font-style: normal;
 }
 .sticky {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -116,7 +117,7 @@ section:not(.project) {
   display: inline-block;
   width: 60px;
   height: 1px;
-  background: #ded1b7;
+  background: rgb(222, 209, 183);
   vertical-align: middle;
   margin-right: 0.5rem;
 }
@@ -197,7 +198,8 @@ section:not(.project) {
   text-align: center;
   font-size: 60px;
   z-index: 2;
-  animation: load 2s infinite linear;
+  -webkit-animation: load 2s infinite linear;
+          animation: load 2s infinite linear;
 }
 .wrapper .loader-outer .loader-inner .radius-square {
   width: 15px;
@@ -231,8 +233,18 @@ section:not(.project) {
   display: none;
 }
 .wrapper h1::after {
-  animation: txt 1s infinite;
+  -webkit-animation: txt 1s infinite;
+          animation: txt 1s infinite;
   content: "";
+}
+
+@-webkit-keyframes load {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 220px;
+  }
 }
 
 @keyframes load {
@@ -241,6 +253,20 @@ section:not(.project) {
   }
   100% {
     left: 220px;
+  }
+}
+@-webkit-keyframes txt {
+  0% {
+    content: "LOADING";
+  }
+  35% {
+    content: "LOADING.";
+  }
+  65% {
+    content: "LOADING..";
+  }
+  100% {
+    content: "LOADING...";
   }
 }
 @keyframes txt {
@@ -282,7 +308,7 @@ section:not(.project) {
   opacity: 0;
 }
 .menu:hover {
-  border-color: #fcd34d;
+  border-color: rgb(252, 211, 77);
 }
 .menu .relative {
   position: relative;
@@ -302,7 +328,7 @@ section:not(.project) {
   width: 16px;
   height: 2px;
   border-radius: 70px;
-  background: #e5e7eb;
+  background: rgb(229, 231, 235);
 }
 .menu .relative .hambuger-menu div + div {
   margin-top: 4px;
@@ -319,7 +345,7 @@ section:not(.project) {
   z-index: 200;
 }
 .menu .context-menu a {
-  background: #212121;
+  background: rgb(33, 33, 33);
   display: block;
   white-space: nowrap;
   height: 50px;
@@ -338,14 +364,7 @@ section:not(.project) {
   border-radius: 40px;
   transform: translateY(100px);
   opacity: 0;
-}
-.introduce img {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  margin: -1px 0 -1px -1px;
-  border: 1px solid #969696;
-  object-fit: cover;
+  height: 60px;
 }
 .introduce .typing {
   position: relative;
@@ -359,7 +378,13 @@ section:not(.project) {
   width: 1px;
   height: 100%;
   background: #fff;
-  animation: 1s tick infinite;
+  -webkit-animation: 1s tick infinite;
+          animation: 1s tick infinite;
+}
+@-webkit-keyframes tick {
+  50% {
+    opacity: 0;
+  }
 }
 @keyframes tick {
   50% {
@@ -395,7 +420,7 @@ section:not(.project) {
   transition: 0.5s;
 }
 .icon-list li + li:hover {
-  border: 1px solid #fcd34d;
+  border: 1px solid rgb(252, 211, 77);
 }
 .icon-list .progress {
   position: relative;
@@ -406,7 +431,7 @@ section:not(.project) {
   left: 0;
   fill: transparent;
   stroke-width: 3px;
-  stroke: red;
+  stroke: rgb(255, 0, 0);
   transform: rotate(-90deg);
 }
 .icon-list li.github-item a {
@@ -481,7 +506,8 @@ section:not(.project) {
 .about .star img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about .star::before {
   content: "";
@@ -489,7 +515,7 @@ section:not(.project) {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#121313, transparent);
+  background: linear-gradient(rgb(18, 19, 19), transparent);
 }
 .about .star::after {
   content: "";
@@ -498,7 +524,7 @@ section:not(.project) {
   left: 0;
   width: 100%;
   height: 40%;
-  background: linear-gradient(transparent, #121313);
+  background: linear-gradient(transparent, rgb(18, 19, 19));
 }
 .about .container {
   margin: -4rem auto 0;
@@ -516,7 +542,7 @@ section:not(.project) {
   margin-top: 1.25rem;
 }
 .about .container .flex .history-txt {
-  color: #ded1b7;
+  color: rgb(222, 209, 183);
   font-size: 2.25rem;
   text-align: right;
   margin-right: 3rem;
@@ -544,7 +570,7 @@ section:not(.project) {
 .about .container .my-info .name-en {
   font-weight: lighter;
   font-size: 8rem;
-  color: #ded1b7;
+  color: rgb(222, 209, 183);
   line-height: 0.85;
   margin-top: 1.375rem;
   margin-bottom: 1rem;
@@ -615,7 +641,8 @@ section:not(.project) {
 }
 .project .project-list > li .img-container img {
   width: 80%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .project .project-list > li .content {
   margin-left: 1.5rem;
@@ -650,7 +677,8 @@ section:not(.project) {
 .project .project-list > li .content .tags > a img {
   width: 30px;
   height: 30px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .project .project-list > li .content .tags .react {
   background: #20232a;
@@ -662,7 +690,7 @@ section:not(.project) {
   background: linear-gradient(to right, #db768c, #da9d5e);
 }
 .project .project-list > li .content .tags .react-router-dom {
-  background: #252525;
+  background: rgb(37, 37, 37);
 }
 .project .project-list > li .content > a:not(:last-child) {
   margin-right: 0.625rem;
@@ -748,7 +776,7 @@ section:not(.project) {
   margin: 0 auto;
 }
 .contact .container .title {
-  color: #ded1b7;
+  color: rgb(222, 209, 183);
 }
 .contact .container .title h1 {
   font-size: 2rem;
@@ -760,6 +788,4 @@ section:not(.project) {
 }
 .contact .container .email a {
   text-decoration: underline;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

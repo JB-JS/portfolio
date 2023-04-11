@@ -61,11 +61,7 @@
 
       <!-- 프로필 상자 -->
       <div class="introduce">
-        <img
-          src="./public/images/basicProfile.jpeg"
-          alt="jungbeomsu profile Image"
-          class="profile"
-        />
+        <div class="profile"></div>
         <span class="typing"></span>
         <div class="cursor"></div>
       </div>
@@ -83,36 +79,6 @@
           <a href="https://github.com/JB-JS">
             <img src="./public/images/git.png" alt="Git Icon" />
           </a>
-        </li>
-        <li class="sound-item">
-          <svg
-            fill="currentColor"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            class="unmute"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <svg
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            xmlns="http://www.w3.org/2000/svg"
-            class="mute"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
         </li>
       </ul>
       <!-- // 기능아이템 목록 끝 -->
@@ -140,7 +106,7 @@
           <div class="flex fade-up" data-duration="1000">
             <p class="history-txt">
               My story from<br />
-              2021.05,24
+              2023
             </p>
             <div class="txt-box">
               <div class="line"></div>
@@ -160,17 +126,14 @@
               <div class="writer">정범수</div>
             </div>
           </div>
-          <div class="my-profile fade-down" data-duration="1000">
-            <div class="img-box"></div>
-          </div>
           <div class="my-info">
-            <p class="history-txt fade-up" data-duration="1000">2021.05,24</p>
+            <p class="history-txt fade-up" data-duration="1000"></p>
             <div class="name-en fade-up" data-duration="1000">
               JUNG<br />
               BEOM SU
             </div>
             <p class="history-txt fade-up" data-duration="1000">
-              My story 2021.05,24
+              My story 2023.05,24
             </p>
           </div>
         </div>
@@ -784,31 +747,6 @@
           </div>
 
           <div id="disqus_thread"></div>
-          <script>
-            /**
-             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-            ;(function () {
-              // DON'T EDIT BELOW THIS LINE
-              var d = document,
-                s = d.createElement('script')
-              s.src = 'https://jungbemosu-portfolio.disqus.com/embed.js'
-              s.setAttribute('data-timestamp', +new Date())
-              ;(d.head || d.body).appendChild(s)
-            })()
-          </script>
-          <noscript
-            >Please enable JavaScript to view the
-            <a href="https://disqus.com/?ref_noscript"
-              >comments powered by Disqus.</a
-            ></noscript
-          >
         </div>
       </section>
     </main>
